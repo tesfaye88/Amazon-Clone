@@ -18,8 +18,7 @@ function CatagoryCard({ data }) {
                     <p>shop now</p>
                 </Link>
                 
-                
-            
+                            
         </div>
 
     )

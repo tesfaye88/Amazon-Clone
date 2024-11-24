@@ -6,16 +6,15 @@ import './App.css'
 // import Orders from './Components/Pages/Orders/Orders'
 // import Routing from './Router'
 import Layout from './Components/Layout/Layout'
-// import Product from './Components/Product/Product'
-// import Catagory from './Components/Catagory/Catagory'
+import Product from './Components/Product/Product'
+import Catagory from './Components/Catagory/Catagory'
 // import Header from './Components/Header/Header'
 // import Carousel from './Components/Carousel/Carousel'
 // import CatagoryCard from './Components/Catagory/CatagoryCard'
 
 // import Routing from './Router'
-// import { Carousel } from 'react-responsive-carousel'
 
-// import Carousel from '../../Components/Carousel/Carousel'
+import Carousal from './Components/Carousel/Carousel'
 
 
 function App() {
@@ -24,14 +23,12 @@ function App() {
   return (
     <>
     <Layout/>
-     {/* <Landing />   */}
-     {/* <Header /> */}
-     {/* <Carousel/> */}
-     {/* <Catagory /> */}
+    <Carousal/>
+     <Catagory />
 
      {/* <Routing />
-     <Catagory /> 
-      <Product /> */}
+     <Catagory />  */}
+      <Product />
 
 
     </>
