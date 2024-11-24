@@ -5,8 +5,10 @@ import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
 import LowerHeader from './LowerHeader';
 import { Link } from 'react-router-dom'
-
+import {  DataContext} from '../DataProvider/DataProvider';
 function Header() {
+    const [basket, dispatch] = useContext(DataContext)
+    console.log(basket.length)
     return (
         <>
 
@@ -67,7 +69,7 @@ function Header() {
                         <div>
                             {/* icon */}
                             <BiCart size={35} />
-                            <span>0</span>
+                            <span>{basket.length}</span>
                         </div>
                     </Link>
 

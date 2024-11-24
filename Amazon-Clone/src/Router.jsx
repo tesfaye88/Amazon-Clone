@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import { Routes } from "react-router"
+import { Router, Routes } from "react-router"
 import Payment from './Components/Pages/Payment/Payment'
 import SignUp from './Components/Pages/Auth/SignUp'
 import Landing from './Components/Pages/Landing/Landing'
@@ -21,7 +21,7 @@ function Routing() {
       <Route path="/products/:productId" element={<ProductDetail />} />
       <Route path="/cart" element={<Cart />} />
     </Routes>
-
+    
 
 
   )
