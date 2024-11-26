@@ -10,7 +10,7 @@ function Header() {
     const [{basket}, dispatch] = useContext(DataContext)
     console.log(basket.length)
     return (
-        <section className='classes.fixed'>
+        <section className={classes.fixed}>
 
             <section>
                 <div className={classes.header_conatainer} >
