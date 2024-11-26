@@ -44,17 +44,23 @@
 }
 .products_container{
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(max-width:1450px)); */
-    grid-template-columns: repeat(5, 1fr);
-    max-width: 1450px;
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    /* 250px */
+    /* grid-template-columns: repeat(5, 1fr); */
+    /* max-width: 1450px; */
+    margin: 100px auto;
    
-    margin: 100px auto 100px auto;
-  
-    gap :50px;
+     gap :50px;  
     justify-items: center;
-    /* background-color: greenyellow; */
-}
-.products_container section{
+
+ 
+ 
+  /* background-color: green; */
+  padding-left: 5%  ;
+  padding-right: 5%;
+ 
+    }
+.products_container section {
     margin: 0 auto;
 }
 /* .card_container span{

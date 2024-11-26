@@ -1,6 +1,6 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
-import { Router, Routes } from "react-router"
+import { BrowserRouter, Routes ,Route } from 'react-router-dom'
+// import {  BrowserRouter, Routes ,Route} from "react-router"
 import Payment from './Components/Pages/Payment/Payment'
 import SignUp from './Components/Pages/Auth/SignUp'
 import Landing from './Components/Pages/Landing/Landing'
@@ -11,7 +11,7 @@ import ProductDetail from './Components/Pages/ProductDetail/ProductDetail'
 
 function Routing() {
   return (
-
+<BrowserRouter>
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/auth" element={<SignUp />} />
@@ -21,7 +21,7 @@ function Routing() {
       <Route path="/products/:productId" element={<ProductDetail />} />
       <Route path="/cart" element={<Cart />} />
     </Routes>
-    
+    </BrowserRouter>
 
 
   )

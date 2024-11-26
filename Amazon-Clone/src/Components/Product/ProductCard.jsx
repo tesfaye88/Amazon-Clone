@@ -10,7 +10,9 @@ import { type } from '../Utility/action.type';
 // import { Rating } from '@mui/material';
 
 
-function ProductCard({ product, flex, renderDes }) {
+function ProductCard({ product, flex, renderDes,renderAdd})
+  
+  {
     const { image, title, id, rating, price, description } = product;
     console.log(product)
     const [state, dispatch] = useContext(DataContext)
@@ -26,15 +28,16 @@ function ProductCard({ product, flex, renderDes }) {
 
 
     return (
-
+    
         <div className={`${classes.card_container} ${flex ? classes.product_fixed : ''}`} >
+            
             <Link to={`/products/${id}`}>
                 <img src={image} alt='' className='{classes.img_container}' />
             </Link>
             <div>
 
                 <span>{title}</span>
-                {renderDes && <div style={{ maxWidth: "760px" }}>{description}</div>}
+                {renderDes && <div style={{ maxWidth: "750px" }}>{description}</div>}
                 <div className={classes.rating}>
                     <Rating value={Rating.rate} precision={0.1} />
                     <small>{Rating.count}</small>
@@ -43,12 +46,16 @@ function ProductCard({ product, flex, renderDes }) {
                     {/* price */}
                     <CurrencyFormat amount={price} />
                 </div>
-                <button className={classes.button} onClick={addToCart}>
-                    Add to cart
+             {
+                  renderAdd &&
+                 <button className={classes.button} onClick={addToCart}>addToCart
                 </button>
+            }
+
+                
             </div>
         </div>
-
+        
     );
 }
 

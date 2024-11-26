@@ -31,6 +31,7 @@ function ProductDetail() {
       {isLoading?(<Loder />):(<ProductCard product={product} 
       flex={true}
       renderDes={true}
+      renderAdd={true}
       
       />)}
       

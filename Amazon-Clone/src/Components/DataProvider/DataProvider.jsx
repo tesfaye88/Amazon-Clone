@@ -1,16 +1,16 @@
-import { Children, createContext, useReducer } from "react";
+import { createContext, useReducer } from "react";
 
 
-// prepares the data layer
+// prepares the data 
 export const DataContext=createContext()
-// wrap our app and provide the data layer
-export const DataProvider=({Children,reducer,initialState})=>{
+// wrap our app and provide the data 
+export const DataProvider=({children,reducer,initialState})=>{
 
 return (
 <DataContext.Provider value={useReducer(reducer,initialState)}>
-{Children}
+{children}
 </DataContext.Provider>
 )
 }
-// push and pull information from the data layer
-// export const useStateValue = () => useContext(StateContext);
+// push and pull information from the data 
+export const useStateValue = () => useContext(StateContext);
