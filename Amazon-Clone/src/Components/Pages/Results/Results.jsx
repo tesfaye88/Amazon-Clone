@@ -40,25 +40,14 @@ function Results() {
           <hr />
           <div className={classes.products_container}>
             {result?.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product}
+              renderAdd={true}
+               />
             ))}
           </div>
         </section>)
       }
-      <section>
-        <h1 style={{ padding: '30px' }}>Results</h1>
-        <p style={{ padding: '30px' }}>category/{categoryName}</p>
-        <hr />
-        <div className={classes.products_container}>
-          {result?.map((product) => (
-            <ProductCard key={product.id} product={product}
-            renderDes={true}
-          flex={true}
-          renderAdd={true}
-            />
-          ))}
-        </div>
-      </section>
+      
     </Layout>
   );
 }

@@ -2,32 +2,35 @@ import React, { useContext } from 'react'
 import './Cart.module.css'
 import Layout from '../../LayOut/LayOut'
 import { DataContext} from '../../DataProvider/DataProvider';
-// import { DataProvider } from '../../DataProvider/DataProvider'
 import ProductCard from '../../Product/ProductCard'
-
 import CurrencyFormat from '../../CurrencyFormat/CurrencyFormat';
 import { Link } from 'react-router-dom'
 import classes from './Cart.module.css'
 function Cart() {
   const [{ basket, user }, dispatch] = useContext(DataContext)
-  // const total=basket.reduce((amount,item)=>(item.price + amount),0)
-  return (
+  const total=basket.reduce((amount,item)=>(item.price * item.amount +amount),0)
+  console.log(total)
+
+  return ( 
     <Layout>
       <section className={classes.container}>
-        <div className={classes.cart_container} ><h2>Hello</h2>
-          <h3>Your Shoping Market</h3><hr />
+        <div className={classes.cart_container} >
+          <h2>Hello</h2>
+          <h3>Your Shoping Market</h3>
+          <hr />
           {
-            basket?.length == 0 ? (<p>opps ! no items in your cart</p>) : (basket?.map((item, i) => {
-              return (
-              <ProductCard product={item}
+            basket?.length==0 ?(<p> opps ! no items in your cart </p>) : (basket?.map((item, i) => (
+              //  return 
+              <ProductCard 
+              product={item}
                 key={i}
                 renderDes={true}
                 flex={true}
                 renderAdd={false}
               
               />
-              )
-            }))
+              
+            )))
           }
         </div>
         {
