@@ -1,17 +1,32 @@
 import React, { useContext } from 'react'
 import './Cart.module.css'
 import Layout from '../../LayOut/LayOut'
-import { DataContext} from '../../DataProvider/DataProvider';
+import { DataContext } from '../../DataProvider/DataProvider';
 import ProductCard from '../../Product/ProductCard'
 import CurrencyFormat from '../../CurrencyFormat/CurrencyFormat';
 import { Link } from 'react-router-dom'
 import classes from './Cart.module.css'
+import { } from '../../Utility/action.type'
+import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io";
+import { type } from '../../Utility/action.type';
 function Cart() {
   const [{ basket, user }, dispatch] = useContext(DataContext)
-  const total=basket.reduce((amount,item)=>(item.price * item.amount +amount),0)
+  const total = basket.reduce((amount, item) => (item.price * item.amount + amount), 0)
   console.log(total)
 
-  return ( 
+  const increment = (item) => {
+    dispatch({
+      type: type.ADD_TO_BASKET, item
+    })
+  }
+  const decrement = (id) => {
+    dispatch({
+      type: type.REMOVE_FROM_BASKET, id
+    })
+  }
+
+  return (
     <Layout>
       <section className={classes.container}>
         <div className={classes.cart_container} >
@@ -19,18 +34,26 @@ function Cart() {
           <h3>Your Shoping Market</h3>
           <hr />
           {
-            basket?.length==0 ?(<p> opps ! no items in your cart </p>) : (basket?.map((item, i) => (
-              //  return 
-              <ProductCard 
-              product={item}
-                key={i}
-                renderDes={true}
-                flex={true}
-                renderAdd={false}
-              
-              />
-              
-            )))
+            basket?.length == 0 ? (<p> opps ! no items in your cart </p>) : (basket?.map((item, i) => {
+              return <section className={classes.cart_product}>
+                <ProductCard
+                  product={item}
+                  key={i}
+                  renderDes={true}
+                  flex={true}
+                  renderAdd={false}
+
+                />
+                <div className={classes.btn_container}>
+                  <button className={classes.btn}  onClick={() => increment(item)}><IoIosArrowDown size={20} className={classes.svg}/></button>
+                  <span>{item.amount}</span>
+                  <button className={classes.btn} onClick={() => decrement(item.id)}><IoIosArrowUp size={20}className={classes.svg} /></button>
+
+                </div>
+
+              </section>
+
+            }))
           }
         </div>
         {
