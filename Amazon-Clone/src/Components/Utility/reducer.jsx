@@ -2,7 +2,8 @@ import React from 'react'
 import { type } from './action.type'
 // const [state, dispatch] = useReducer(reducer, initialState)
 export const initialState = {
-  basket: []
+  basket: [],
+  user:null
 }
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -38,6 +39,11 @@ export const reducer = (state, action) => {
         ...state,
         basket: newBasket
       };
+      case type.SET_USER:
+        return {
+           ...state,
+           user:action.user
+        }
     default:
       return state;
   }
