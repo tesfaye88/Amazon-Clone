@@ -1,4 +1,4 @@
-// import React, { useState } from 'react'
+
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import classes from './Product.module.css'
@@ -6,7 +6,7 @@ import ProductCard from './ProductCard'
 import Loder from '../Loder/Loder'
 
 function Product() {
-    const [products, setProducts] = useState([]);  // Initialize with an empty array
+    const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
     useEffect(() => {
         setIsLoading(true)
@@ -28,7 +28,7 @@ function Product() {
             }
             {isLoading ? (<Loder />) : (
                 <section className={classes.products_container}>
-                    
+
                     {
                         // products.length > 0 ? (
                         products.map((singleProduct) => (
@@ -37,7 +37,7 @@ function Product() {
                         ))
 
                     }
-                    
+
                 </section>)
             }
 

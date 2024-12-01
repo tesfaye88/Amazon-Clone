@@ -117,13 +117,16 @@
 }
 
 .language select {
-    background-color: #1a1a1a;
+    background-color: #000000;
     border: none;
     color: white;
 }
-
+.language option{
+    background: white;
+}
 .language img {
     width: 40%;
+    padding: 2px;
 }
 
 .cart {
