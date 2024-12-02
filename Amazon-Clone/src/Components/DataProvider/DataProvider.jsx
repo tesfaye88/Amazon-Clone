@@ -12,5 +12,4 @@ return (
 </DataContext.Provider>
 )
 }
-// push and pull information from the data 
-export const useStateValue = () => useContext(StateContext);
+

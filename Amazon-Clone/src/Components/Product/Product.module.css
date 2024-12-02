@@ -81,8 +81,10 @@
 
  }
  .product_fixed h3{
-    padding: 20px auto;
+    padding: 20px 0px;
+    
  }
+ 
  .product_fixed .button{
     display: block;
     position: static;

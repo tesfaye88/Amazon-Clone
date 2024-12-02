@@ -45,9 +45,9 @@ function Cart() {
 
                 />
                 <div className={classes.btn_container}>
-                  <button className={classes.btn}  onClick={() => increment(item)}><IoIosArrowDown size={20} className={classes.svg}/></button>
+                  <button className={classes.btn}  onClick={() => increment(item)}><IoIosArrowUp size={20}  className={classes.svg}/></button>
                   <span>{item.amount}</span>
-                  <button className={classes.btn} onClick={() => decrement(item.id)}><IoIosArrowUp size={20}className={classes.svg} /></button>
+                  <button className={classes.btn} onClick={() => decrement(item.id)}><IoIosArrowDown size={20}className={classes.svg} /></button>
 
                 </div>
 
