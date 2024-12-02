@@ -32,7 +32,7 @@
     color: black;
 }
 
-.but:hover svg {
+.btn:hover svg{
     background-color: var(--primary-color);
 
 }
