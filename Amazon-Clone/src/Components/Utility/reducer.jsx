@@ -3,8 +3,10 @@ import { type } from './action.type'
 // const [state, dispatch] = useReducer(reducer, initialState)
 export const initialState = {
   basket: [],
-  user:null
+  user: null
 }
+console.log('my initial state ',initialState.basket)
+
 export const reducer = (state, action) => {
   switch (action.type) {
     case type.ADD_TO_BASKET:
@@ -39,11 +41,11 @@ export const reducer = (state, action) => {
         ...state,
         basket: newBasket
       };
-      case type.SET_USER:
-        return {
-           ...state,
-           user:action.user
-        }
+    case type.SET_USER:
+      return {
+        ...state,
+        user: action.user
+      }
     default:
       return state;
   }
