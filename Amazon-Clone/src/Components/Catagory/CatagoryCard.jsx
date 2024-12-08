@@ -4,7 +4,7 @@ import classes from './Catagory.module.css'
 import { Link } from 'react-router-dom'
 
 function CatagoryCard({ data }) {
-    console.log(data)
+    // console.log(data)
     // destructure
     return (
        

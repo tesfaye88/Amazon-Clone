@@ -12,7 +12,8 @@
     margin: 0 auto;
 }
 
-.h1,
-.P {
+.section h1,
+.stion P {
     font-weight: 600;
+    color: black;
 }

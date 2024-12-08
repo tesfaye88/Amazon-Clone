@@ -19,7 +19,7 @@ function Results() {
     axios
       .get(`${productUrl}/products/category/${categoryName}`)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setResult(res.data);
         isLoading(false)
       })
@@ -29,14 +29,14 @@ function Results() {
       });
   }, [categoryName]); // Add categoryName as a dependency so it updates when it changes
 
-  console.log(result);
+  // console.log(result);
 
   return (
     <Layout>
       {
         isLoading?(<loader />):(<section>
-          <h1 style={{ padding: '30px' }}>Results</h1>
-          <p style={{ padding: '30px' }}>category/{categoryName}</p>
+          <h1 style={{ padding: '30px', color:'black'}}>Results</h1>
+          <p style={{ padding: '30px',color:'black' }}>category/{categoryName}</p>
           <hr />
           <div className={classes.products_container}>
             {result?.map((product) => (

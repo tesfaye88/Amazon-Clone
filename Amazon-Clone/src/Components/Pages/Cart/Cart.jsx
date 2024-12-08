@@ -6,7 +6,6 @@ import ProductCard from '../../Product/ProductCard'
 import CurrencyFormat from '../../CurrencyFormat/CurrencyFormat';
 import { Link } from 'react-router-dom'
 import classes from './Cart.module.css'
-import { } from '../../Utility/action.type'
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import { type } from '../../Utility/action.type';
@@ -17,7 +16,7 @@ function Cart() {
 
   const increment = (item) => {
     dispatch({
-      type: type.ADD_TO_BASKET, item
+      type: type.ADD_TO_BASKET,item
     })
   }
   const decrement = (id) => {
@@ -47,7 +46,7 @@ function Cart() {
                 <div className={classes.btn_container}>
                   <button className={classes.btn}  onClick={() => increment(item)}><IoIosArrowUp size={20}  className={classes.svg}/></button>
                   <span>{item.amount}</span>
-                  <button className={classes.btn} onClick={() => decrement(item.id)}><IoIosArrowDown size={20}className={classes.svg} /></button>
+                  <button className={classes.btn} onClick={() => decrement(item.id)}><IoIosArrowDown size={20} className={classes.svg} /></button>
 
                 </div>
 

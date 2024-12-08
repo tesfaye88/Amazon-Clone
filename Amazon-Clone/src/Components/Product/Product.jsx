@@ -31,9 +31,9 @@ function Product() {
 
                     {
                         // products.length > 0 ? (
-                        products.map((singleProduct) => (
+                        products.map((singleProduct,id) => (
 
-                            <ProductCard key={singleProduct.id} product={singleProduct} renderAdd={true} />
+                            <ProductCard key={singleProduct.id} product={singleProduct} renderAdd={true}  />
                         ))
 
                     }

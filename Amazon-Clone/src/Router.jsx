@@ -1,6 +1,6 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-// import {  BrowserRouter, Routes ,Route} from "react-router"
+// import { BrowserRouter, Routes ,Route } from 'react-router-dom'
+import {  BrowserRouter, Routes ,Route} from "react-router"
 import Payment from './Components/Pages/Payment/Payment'
 import Auth from './Components/Pages/Auth/Auth'
 import Landing from './Components/Pages/Landing/Landing'
