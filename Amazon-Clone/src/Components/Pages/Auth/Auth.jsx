@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import './SignUp.module.css';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link,useNavigate,useLocation } from 'react-router-dom';
 import classes from "./SignUp.module.css";
 import { auth } from '../../Utility/firebase';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
@@ -15,14 +15,18 @@ function Auth() {
 
   const [{ user }, dispatch] = useContext(DataContext);
   const navigate=useNavigate();
+  const navStateData=useLocation();
+  // console.log("nav state data",navStateData)
+
   const [loading, setLoading] = useState({
+
     signIn: false,
     signUp: false
   });
 
   const authHandler = async (e) => {
     e.preventDefault();
-    console.log(e.target.name);
+    // console.log(e.target.name);
 
     if (e.target.name === "signin") {
       // Handle sign-in
@@ -34,7 +38,7 @@ function Auth() {
             user: userInfo.user
           });
           setLoading({ ...loading, signIn: false });
-          navigate("/");
+          navigate(navStateData?.state?.redirect || "/");
         })
         .catch((error) => {
           setError(error?.message || "An error occurred");
@@ -51,7 +55,7 @@ function Auth() {
             user: userInfo.user
           });
           setLoading({ ...loading, signUp: false });
-          navigate("/");
+          navigate(navStateData?.state?.redirect || "/");
         })
         .catch((error) => {
           setError(error?.message || "An error occurred");
@@ -67,6 +71,20 @@ function Auth() {
       </Link>
       <div className={classes.login_container}>
         <h1>Sign In</h1>
+          
+          {
+         navStateData?.state?.message && (
+          <small style={{
+            padding: "5px",
+            textAlign: "center",
+            color: "red",
+            fontWeight: "bold"
+          }}>
+            {navStateData?.state?.message}
+          </small>
+        )
+
+          }
         <form>
           <div>
             <label htmlFor='email'>Email</label>
