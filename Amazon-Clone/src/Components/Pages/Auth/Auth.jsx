@@ -73,14 +73,17 @@ function Auth() {
         <h1>Sign In</h1>
           
           {
-         navStateData?.state?.message && (
+         navStateData?.state?.message && 
+         (
           <small style={{
             padding: "5px",
             textAlign: "center",
             color: "red",
             fontWeight: "bold"
           }}>
+
             {navStateData?.state?.message}
+
           </small>
         )
 

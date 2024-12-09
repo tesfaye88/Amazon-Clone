@@ -94,10 +94,10 @@ function Payment() {
           <div className={classes.flex}>
             {/* {Delivery Address} */}
             <h3 >Delivery Address</h3>
-            <div>
+            <div className={classes.deliver}>
               <div>{user?.email}</div>
-              <div>1300 Court House</div>
-              <div>Arlington, VA</div>
+              <div>Ethiopia</div>
+              <div>Addis Ababa, Legihar</div>
             </div>
           </div>
           <hr />

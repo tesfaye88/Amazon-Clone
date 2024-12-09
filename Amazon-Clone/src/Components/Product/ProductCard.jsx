@@ -5,10 +5,6 @@ import Rating from '@mui/material/Rating';
 import { Link } from 'react-router-dom';
 import { DataContext } from '../DataProvider/DataProvider';
 import { type } from '../Utility/action.type';
-// import Product from './Product';
-// or
-// import { Rating } from '@mui/material';
-
 
 function ProductCard({ product, flex, renderDes, renderAdd }) {
     const { image, title, id, rating, price, description } = product;
@@ -34,7 +30,7 @@ function ProductCard({ product, flex, renderDes, renderAdd }) {
             </Link>
             <div>
 
-                <h3>{title}</h3>
+                <span>{title}</span>
                 {renderDes && <div style={{ maxWidth: "750px" }}>{description}</div>}
                 <div className={classes.rating}>
                     <Rating value={Rating.rate} precision={0.1} />

@@ -10,6 +10,10 @@
 .payment {
     padding: 30px;
 }
+.deliver {
+    gap: 50px;
+
+}
 
 
 .flex {
@@ -34,8 +38,13 @@
 
 
 .flex div {
-    height: auto !important;
+    height: auto !important;  
 }
+.flex div  img{
+    height: 150px;  
+}
+
+
 .flex div div{
     color: black;
 }
@@ -79,7 +88,9 @@
 .payment_details button:hover {
     background-color: var(--primary-shade);
 }
-
+.review{
+    
+}
 
 .loading {
     display: flex;
